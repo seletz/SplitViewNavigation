@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF7AFBA6133293F400CA409C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7AFBA5133293F400CA409C /* UIKit.framework */; };
+		BF7AFBA8133293F400CA409C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7AFBA7133293F400CA409C /* Foundation.framework */; };
+		BF7AFBAA133293F400CA409C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7AFBA9133293F400CA409C /* CoreGraphics.framework */; };
+		BF7AFBB0133293F400CA409C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF7AFBAE133293F400CA409C /* InfoPlist.strings */; };
+		BF7AFBB3133293F400CA409C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFBB2133293F400CA409C /* main.m */; };
+		BF7AFBB6133293F400CA409C /* SplitViewNavigationAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFBB5133293F400CA409C /* SplitViewNavigationAppDelegate.m */; };
+		BF7AFBB9133293F400CA409C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7AFBB7133293F400CA409C /* MainWindow.xib */; };
+		BF7AFBBC133293F400CA409C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFBBB133293F400CA409C /* DetailViewController.m */; };
+		BF7AFBBF133293F400CA409C /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7AFBBD133293F400CA409C /* DetailView.xib */; };
+		BF7AFBC2133293F400CA409C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFBC1133293F400CA409C /* RootViewController.m */; };
+		BF7AFBC9133293F400CA409C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7AFBA5133293F400CA409C /* UIKit.framework */; };
+		BF7AFBCA133293F400CA409C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7AFBA7133293F400CA409C /* Foundation.framework */; };
+		BF7AFBCB133293F400CA409C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7AFBA9133293F400CA409C /* CoreGraphics.framework */; };
+		BF7AFBD3133293F400CA409C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF7AFBD1133293F400CA409C /* InfoPlist.strings */; };
+		BF7AFBD6133293F400CA409C /* SplitViewNavigationTests.h in Resources */ = {isa = PBXBuildFile; fileRef = BF7AFBD5133293F400CA409C /* SplitViewNavigationTests.h */; };
+		BF7AFBD8133293F400CA409C /* SplitViewNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFBD7133293F400CA409C /* SplitViewNavigationTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF7AFBCC133293F400CA409C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF7AFB98133293F400CA409C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF7AFBA0133293F400CA409C;
+			remoteInfo = SplitViewNavigation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BF7AFBA1133293F400CA409C /* SplitViewNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7AFBA5133293F400CA409C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BF7AFBA7133293F400CA409C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BF7AFBA9133293F400CA409C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BF7AFBAD133293F400CA409C /* SplitViewNavigation-Info.plist */ = {isa = PBXFileReference; path = "SplitViewNavigation-Info.plist"; sourceTree = "<group>"; };
+		BF7AFBAF133293F400CA409C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF7AFBB1133293F400CA409C /* SplitViewNavigation-Prefix.pch */ = {isa = PBXFileReference; path = "SplitViewNavigation-Prefix.pch"; sourceTree = "<group>"; };
+		BF7AFBB2133293F400CA409C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF7AFBB4133293F400CA409C /* SplitViewNavigationAppDelegate.h */ = {isa = PBXFileReference; path = SplitViewNavigationAppDelegate.h; sourceTree = "<group>"; };
+		BF7AFBB5133293F400CA409C /* SplitViewNavigationAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplitViewNavigationAppDelegate.m; sourceTree = "<group>"; };
+		BF7AFBB8133293F400CA409C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		BF7AFBBA133293F400CA409C /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		BF7AFBBB133293F400CA409C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		BF7AFBBE133293F400CA409C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailView.xib; sourceTree = "<group>"; };
+		BF7AFBC0133293F400CA409C /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		BF7AFBC1133293F400CA409C /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		BF7AFBC8133293F400CA409C /* SplitViewNavigationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitViewNavigationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7AFBD0133293F400CA409C /* SplitViewNavigationTests-Info.plist */ = {isa = PBXFileReference; path = "SplitViewNavigationTests-Info.plist"; sourceTree = "<group>"; };
+		BF7AFBD2133293F400CA409C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BF7AFBD4133293F400CA409C /* SplitViewNavigationTests-Prefix.pch */ = {isa = PBXFileReference; path = "SplitViewNavigationTests-Prefix.pch"; sourceTree = "<group>"; };
+		BF7AFBD5133293F400CA409C /* SplitViewNavigationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplitViewNavigationTests.h; sourceTree = "<group>"; };
+		BF7AFBD7133293F400CA409C /* SplitViewNavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplitViewNavigationTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF7AFB9E133293F400CA409C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7AFBA6133293F400CA409C /* UIKit.framework in Frameworks */,
+				BF7AFBA8133293F400CA409C /* Foundation.framework in Frameworks */,
+				BF7AFBAA133293F400CA409C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF7AFBC4133293F400CA409C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7AFBC9133293F400CA409C /* UIKit.framework in Frameworks */,
+				BF7AFBCA133293F400CA409C /* Foundation.framework in Frameworks */,
+				BF7AFBCB133293F400CA409C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BF7AFB96133293F400CA409C = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBAB133293F400CA409C /* SplitViewNavigation */,
+				BF7AFBCE133293F400CA409C /* SplitViewNavigationTests */,
+				BF7AFBA4133293F400CA409C /* Frameworks */,
+				BF7AFBA2133293F400CA409C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BF7AFBA2133293F400CA409C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBA1133293F400CA409C /* SplitViewNavigation.app */,
+				BF7AFBC8133293F400CA409C /* SplitViewNavigationTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF7AFBA4133293F400CA409C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBA5133293F400CA409C /* UIKit.framework */,
+				BF7AFBA7133293F400CA409C /* Foundation.framework */,
+				BF7AFBA9133293F400CA409C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF7AFBAB133293F400CA409C /* SplitViewNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBB4133293F400CA409C /* SplitViewNavigationAppDelegate.h */,
+				BF7AFBB5133293F400CA409C /* SplitViewNavigationAppDelegate.m */,
+				BF7AFBB7133293F400CA409C /* MainWindow.xib */,
+				BF7AFBBA133293F400CA409C /* DetailViewController.h */,
+				BF7AFBBB133293F400CA409C /* DetailViewController.m */,
+				BF7AFBBD133293F400CA409C /* DetailView.xib */,
+				BF7AFBC0133293F400CA409C /* RootViewController.h */,
+				BF7AFBC1133293F400CA409C /* RootViewController.m */,
+				BF7AFBAC133293F400CA409C /* Supporting Files */,
+			);
+			path = SplitViewNavigation;
+			sourceTree = "<group>";
+		};
+		BF7AFBAC133293F400CA409C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBAD133293F400CA409C /* SplitViewNavigation-Info.plist */,
+				BF7AFBAE133293F400CA409C /* InfoPlist.strings */,
+				BF7AFBB1133293F400CA409C /* SplitViewNavigation-Prefix.pch */,
+				BF7AFBB2133293F400CA409C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF7AFBCE133293F400CA409C /* SplitViewNavigationTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBD5133293F400CA409C /* SplitViewNavigationTests.h */,
+				BF7AFBD7133293F400CA409C /* SplitViewNavigationTests.m */,
+				BF7AFBCF133293F400CA409C /* Supporting Files */,
+			);
+			path = SplitViewNavigationTests;
+			sourceTree = "<group>";
+		};
+		BF7AFBCF133293F400CA409C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBD0133293F400CA409C /* SplitViewNavigationTests-Info.plist */,
+				BF7AFBD1133293F400CA409C /* InfoPlist.strings */,
+				BF7AFBD4133293F400CA409C /* SplitViewNavigationTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF7AFBA0133293F400CA409C /* SplitViewNavigation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF7AFBDB133293F400CA409C /* Build configuration list for PBXNativeTarget "SplitViewNavigation" */;
+			buildPhases = (
+				BF7AFB9D133293F400CA409C /* Sources */,
+				BF7AFB9E133293F400CA409C /* Frameworks */,
+				BF7AFB9F133293F400CA409C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SplitViewNavigation;
+			productName = SplitViewNavigation;
+			productReference = BF7AFBA1133293F400CA409C /* SplitViewNavigation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF7AFBC7133293F400CA409C /* SplitViewNavigationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF7AFBDE133293F400CA409C /* Build configuration list for PBXNativeTarget "SplitViewNavigationTests" */;
+			buildPhases = (
+				BF7AFBC3133293F400CA409C /* Sources */,
+				BF7AFBC4133293F400CA409C /* Frameworks */,
+				BF7AFBC5133293F400CA409C /* Resources */,
+				BF7AFBC6133293F400CA409C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF7AFBCD133293F400CA409C /* PBXTargetDependency */,
+			);
+			name = SplitViewNavigationTests;
+			productName = SplitViewNavigationTests;
+			productReference = BF7AFBC8133293F400CA409C /* SplitViewNavigationTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF7AFB98133293F400CA409C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "nexiles GmbH";
+			};
+			buildConfigurationList = BF7AFB9B133293F400CA409C /* Build configuration list for PBXProject "SplitViewNavigation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BF7AFB96133293F400CA409C;
+			productRefGroup = BF7AFBA2133293F400CA409C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF7AFBA0133293F400CA409C /* SplitViewNavigation */,
+				BF7AFBC7133293F400CA409C /* SplitViewNavigationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF7AFB9F133293F400CA409C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7AFBB0133293F400CA409C /* InfoPlist.strings in Resources */,
+				BF7AFBB9133293F400CA409C /* MainWindow.xib in Resources */,
+				BF7AFBBF133293F400CA409C /* DetailView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF7AFBC5133293F400CA409C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7AFBD3133293F400CA409C /* InfoPlist.strings in Resources */,
+				BF7AFBD6133293F400CA409C /* SplitViewNavigationTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BF7AFBC6133293F400CA409C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF7AFB9D133293F400CA409C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7AFBB3133293F400CA409C /* main.m in Sources */,
+				BF7AFBB6133293F400CA409C /* SplitViewNavigationAppDelegate.m in Sources */,
+				BF7AFBBC133293F400CA409C /* DetailViewController.m in Sources */,
+				BF7AFBC2133293F400CA409C /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF7AFBC3133293F400CA409C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF7AFBD8133293F400CA409C /* SplitViewNavigationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF7AFBCD133293F400CA409C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF7AFBA0133293F400CA409C /* SplitViewNavigation */;
+			targetProxy = BF7AFBCC133293F400CA409C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF7AFBAE133293F400CA409C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF7AFBAF133293F400CA409C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BF7AFBB7133293F400CA409C /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF7AFBB8133293F400CA409C /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		BF7AFBBD133293F400CA409C /* DetailView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF7AFBBE133293F400CA409C /* en */,
+			);
+			name = DetailView.xib;
+			sourceTree = "<group>";
+		};
+		BF7AFBD1133293F400CA409C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF7AFBD2133293F400CA409C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF7AFBD9133293F400CA409C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		BF7AFBDA133293F400CA409C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		BF7AFBDC133293F400CA409C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SplitViewNavigation/SplitViewNavigation-Prefix.pch";
+				INFOPLIST_FILE = "SplitViewNavigation/SplitViewNavigation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BF7AFBDD133293F400CA409C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SplitViewNavigation/SplitViewNavigation-Prefix.pch";
+				INFOPLIST_FILE = "SplitViewNavigation/SplitViewNavigation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BF7AFBDF133293F400CA409C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SplitViewNavigation.app/SplitViewNavigation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SplitViewNavigationTests/SplitViewNavigationTests-Prefix.pch";
+				INFOPLIST_FILE = "SplitViewNavigationTests/SplitViewNavigationTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		BF7AFBE0133293F400CA409C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SplitViewNavigation.app/SplitViewNavigation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SplitViewNavigationTests/SplitViewNavigationTests-Prefix.pch";
+				INFOPLIST_FILE = "SplitViewNavigationTests/SplitViewNavigationTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF7AFB9B133293F400CA409C /* Build configuration list for PBXProject "SplitViewNavigation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF7AFBD9133293F400CA409C /* Debug */,
+				BF7AFBDA133293F400CA409C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF7AFBDB133293F400CA409C /* Build configuration list for PBXNativeTarget "SplitViewNavigation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF7AFBDC133293F400CA409C /* Debug */,
+				BF7AFBDD133293F400CA409C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BF7AFBDE133293F400CA409C /* Build configuration list for PBXNativeTarget "SplitViewNavigationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF7AFBDF133293F400CA409C /* Debug */,
+				BF7AFBE0133293F400CA409C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF7AFB98133293F400CA409C /* Project object */;
+}

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'SplitViewNavigationTests' target in the 'SplitViewNavigationTests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif
