@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 
 #import "DetailViewController.h"
+#import "OtherDetailViewController.h"
 
 @implementation RootViewController
 
@@ -96,16 +97,37 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedNavigationItem = [self.navigationItems objectAtIndex:indexPath.row];
-    self.detailViewController.title = self.selectedNavigationItem;
-    self.detailViewController.detailDescriptionLabel.text = self.selectedNavigationItem;
+    
+    NSLog(@"selected: %@", self.selectedNavigationItem);
+    NSLog(@"dvc     : %@", self.detailViewController);
+    NSLog(@"sv vc   : %@", self.splitViewController.viewControllers);
+    
     
     if (indexPath.row < 5) {
         RootViewController *vc = [[[RootViewController alloc] init] autorelease];
-        vc.detailViewController = self.detailViewController;
+        
+        UIViewController<UISplitViewControllerDelegate, CommonDetailView> *dvc = nil;
+        if (self.navigationLevel % 2 == 0) {
+            NSLog(@"creating DetailVC for level %d", self.navigationLevel);
+            dvc = [[[DetailViewController alloc] init] autorelease];
+        } else {
+            NSLog(@"creating OtherDetailVC for level %d", self.navigationLevel);
+            dvc = [[[OtherDetailViewController alloc] init] autorelease];
+        }
+        vc.detailViewController = dvc;
         vc.navigationLevel = self.navigationLevel + 1;
         [self.navigationController pushViewController:vc animated:YES];
+        
+        NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, dvc, nil];
+        self.splitViewController.viewControllers = viewControllers;
+        [viewControllers release];
+        self.splitViewController.delegate = dvc;
+        
+
+    } else {
+        self.detailViewController.title = self.selectedNavigationItem;
+        [self.detailViewController configure:self.selectedNavigationItem];
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,6 +142,8 @@
 {
     NSLog(@"%s", __func__);
     self.navigationItems = nil;
+    self.detailViewController = nil;
+    self.selectedNavigationItem = nil;
 }
 
 - (void)dealloc
@@ -127,6 +151,8 @@
     NSLog(@"%s", __func__);
     [detailViewController release];
     self.navigationItems = nil;
+    self.detailViewController = nil;
+    self.selectedNavigationItem = nil;
     [super dealloc];
 }
 

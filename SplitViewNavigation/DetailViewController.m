@@ -27,6 +27,12 @@
 
 #pragma mark - Managing the detail item
 
+-(void)configure:(NSString *)item
+{
+    self.detailItem = item;
+}
+
+
 /*
  When setting the detail item, update the view and dismiss the popover controller if it's showing.
  */
@@ -80,6 +86,7 @@
 
 - (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController: (UIPopoverController *)pc
 {
+    NSLog(@"%s", __func__);
     barButtonItem.title = @"Events";
     NSMutableArray *items = [[self.toolbar items] mutableCopy];
     [items insertObject:barButtonItem atIndex:0];
@@ -91,6 +98,7 @@
 // Called when the view is shown again in the split view, invalidating the button and popover controller.
 - (void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
+    NSLog(@"%s", __func__);
     NSMutableArray *items = [[self.toolbar items] mutableCopy];
     [items removeObjectAtIndex:0];
     [self.toolbar setItems:items animated:YES];

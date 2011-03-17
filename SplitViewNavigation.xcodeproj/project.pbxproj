@@ -23,6 +23,8 @@
 		BF7AFBD3133293F400CA409C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF7AFBD1133293F400CA409C /* InfoPlist.strings */; };
 		BF7AFBD6133293F400CA409C /* SplitViewNavigationTests.h in Resources */ = {isa = PBXBuildFile; fileRef = BF7AFBD5133293F400CA409C /* SplitViewNavigationTests.h */; };
 		BF7AFBD8133293F400CA409C /* SplitViewNavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7AFBD7133293F400CA409C /* SplitViewNavigationTests.m */; };
+		BFDC4A911332A078005A8083 /* OtherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC4A8F1332A078005A8083 /* OtherDetailViewController.m */; };
+		BFDC4A921332A078005A8083 /* OtherDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDC4A901332A078005A8083 /* OtherDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		BF7AFBD4133293F400CA409C /* SplitViewNavigationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SplitViewNavigationTests-Prefix.pch"; sourceTree = "<group>"; };
 		BF7AFBD5133293F400CA409C /* SplitViewNavigationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SplitViewNavigationTests.h; sourceTree = "<group>"; };
 		BF7AFBD7133293F400CA409C /* SplitViewNavigationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SplitViewNavigationTests.m; sourceTree = "<group>"; };
+		BFDC4A8E1332A078005A8083 /* OtherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherDetailViewController.h; sourceTree = "<group>"; };
+		BFDC4A8F1332A078005A8083 /* OtherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherDetailViewController.m; sourceTree = "<group>"; };
+		BFDC4A901332A078005A8083 /* OtherDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +123,8 @@
 			children = (
 				BF7AFBB4133293F400CA409C /* SplitViewNavigationAppDelegate.h */,
 				BF7AFBB5133293F400CA409C /* SplitViewNavigationAppDelegate.m */,
-				BF7AFBB7133293F400CA409C /* MainWindow.xib */,
-				BF7AFBBA133293F400CA409C /* DetailViewController.h */,
-				BF7AFBBB133293F400CA409C /* DetailViewController.m */,
-				BF7AFBBD133293F400CA409C /* DetailView.xib */,
-				BF7AFBC0133293F400CA409C /* RootViewController.h */,
-				BF7AFBC1133293F400CA409C /* RootViewController.m */,
+				BFDC4A8B13329FF9005A8083 /* XIB */,
+				BFDC4A8D1332A008005A8083 /* View Controllers */,
 				BF7AFBAC133293F400CA409C /* Supporting Files */,
 			);
 			path = SplitViewNavigation;
@@ -158,6 +159,29 @@
 				BF7AFBD4133293F400CA409C /* SplitViewNavigationTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFDC4A8B13329FF9005A8083 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBB7133293F400CA409C /* MainWindow.xib */,
+				BFDC4A901332A078005A8083 /* OtherDetailViewController.xib */,
+				BF7AFBBD133293F400CA409C /* DetailView.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
+		BFDC4A8D1332A008005A8083 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF7AFBBA133293F400CA409C /* DetailViewController.h */,
+				BF7AFBBB133293F400CA409C /* DetailViewController.m */,
+				BF7AFBC0133293F400CA409C /* RootViewController.h */,
+				BF7AFBC1133293F400CA409C /* RootViewController.m */,
+				BFDC4A8E1332A078005A8083 /* OtherDetailViewController.h */,
+				BFDC4A8F1332A078005A8083 /* OtherDetailViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +257,7 @@
 				BF7AFBB0133293F400CA409C /* InfoPlist.strings in Resources */,
 				BF7AFBB9133293F400CA409C /* MainWindow.xib in Resources */,
 				BF7AFBBF133293F400CA409C /* DetailView.xib in Resources */,
+				BFDC4A921332A078005A8083 /* OtherDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +297,7 @@
 				BF7AFBB6133293F400CA409C /* SplitViewNavigationAppDelegate.m in Sources */,
 				BF7AFBBC133293F400CA409C /* DetailViewController.m in Sources */,
 				BF7AFBC2133293F400CA409C /* RootViewController.m in Sources */,
+				BFDC4A911332A078005A8083 /* OtherDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

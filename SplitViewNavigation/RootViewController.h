@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
+@class OtherDetailViewController;
+
+@protocol CommonDetailView
+
+-(void)configure:(NSString *)item;
+
+@end
 
 @interface RootViewController : UITableViewController {
     NSArray * _navigationItems;
@@ -19,7 +26,7 @@
 }
 
 		
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) IBOutlet UIViewController<CommonDetailView> *detailViewController;
 
 @property (nonatomic, retain) NSArray *navigationItems;
 @property (nonatomic, retain) NSString *selectedNavigationItem;
