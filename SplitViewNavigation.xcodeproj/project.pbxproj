@@ -373,6 +373,7 @@
 				GCC_PREFIX_HEADER = "SplitViewNavigation/SplitViewNavigation-Prefix.pch";
 				INFOPLIST_FILE = "SplitViewNavigation/SplitViewNavigation-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -386,6 +387,7 @@
 				GCC_PREFIX_HEADER = "SplitViewNavigation/SplitViewNavigation-Prefix.pch";
 				INFOPLIST_FILE = "SplitViewNavigation/SplitViewNavigation-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +458,7 @@
 				BF7AFBDD133293F400CA409C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF7AFBDE133293F400CA409C /* Build configuration list for PBXNativeTarget "SplitViewNavigationTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +467,7 @@
 				BF7AFBE0133293F400CA409C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

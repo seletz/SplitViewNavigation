@@ -11,14 +11,28 @@
 #import "DetailViewController.h"
 
 @implementation RootViewController
-		
+
 @synthesize detailViewController;
+		
+@synthesize navigationItems = _navigationItems;
+@synthesize selectedNavigationItem = _selectedNavigationItem;
+
+@synthesize navigationLevel = _navigationLevel;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+
+    NSMutableArray *a = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
+
+    for (int i=0; i<10; i++) {
+	    [a insertObject:[NSString stringWithFormat:@"Item %d.%d", self.navigationLevel, i]
+		    atIndex:i];
+    }
+    self.navigationItems = a;
+    self.title = [NSString stringWithFormat:@"Level %d", self.navigationLevel];
 }
 
 		
@@ -55,7 +69,7 @@
 		
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.navigationItems.count;
     		
 }
 
@@ -70,52 +84,28 @@
     }
 
     // Configure the cell.
+    cell.textLabel.text = [self.navigationItems objectAtIndex:indexPath.row];
+    if (indexPath.row < 5) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     		
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here -- for example, create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    self.selectedNavigationItem = [self.navigationItems objectAtIndex:indexPath.row];
+    self.detailViewController.title = self.selectedNavigationItem;
+    self.detailViewController.detailDescriptionLabel.text = self.selectedNavigationItem;
+    
+    if (indexPath.row < 5) {
+        RootViewController *vc = [[[RootViewController alloc] init] autorelease];
+        vc.detailViewController = self.detailViewController;
+        vc.navigationLevel = self.navigationLevel + 1;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,13 +118,15 @@
 
 - (void)viewDidUnload
 {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+    NSLog(@"%s", __func__);
+    self.navigationItems = nil;
 }
 
 - (void)dealloc
 {
+    NSLog(@"%s", __func__);
     [detailViewController release];
+    self.navigationItems = nil;
     [super dealloc];
 }
 

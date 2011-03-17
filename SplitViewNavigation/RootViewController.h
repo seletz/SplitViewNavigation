@@ -11,10 +11,19 @@
 @class DetailViewController;
 
 @interface RootViewController : UITableViewController {
-
+    NSArray * _navigationItems;
+    
+    NSString * _selectedNavigationItem;
+    
+    NSInteger _navigationLevel;
 }
 
 		
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+
+@property (nonatomic, retain) NSArray *navigationItems;
+@property (nonatomic, retain) NSString *selectedNavigationItem;
+@property (nonatomic, assign) NSInteger navigationLevel;
+
 
 @end
