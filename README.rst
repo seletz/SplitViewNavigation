@@ -53,16 +53,12 @@ What does it do?
 Todo
 ====
 
-- clean nib files
-- come up with a nice protocol for view controllers which actually makes
-  sense.
 - Try to implement drill-downs in the Detail View Controller.
 
 Bugs
 ====
 
-- The 2nd Detail View Controller doesn't show the popover item when the
-  iPad is rotated
+- none known as of now.
 
 Change log
 ==========
@@ -71,6 +67,7 @@ Change log
 ----------------
 
 - started writeup, change log
+- fixed popover handling
 
 
 ::
