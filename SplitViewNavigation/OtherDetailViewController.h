@@ -11,9 +11,12 @@
 #import "RootViewController.h"
 
 @interface OtherDetailViewController : UIViewController <CommonDetailView, UISplitViewControllerDelegate> {
-    
+    //UINavigationBar *navigationBar;
 }
+
+@property (nonatomic,retain) IBOutlet UIToolbar *toolbar;
 
 -(void)configure:(NSString *)item;
 
 @end
+// vim: set sw=4 ts=4 expandtab:

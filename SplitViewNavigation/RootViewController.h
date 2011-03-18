@@ -18,18 +18,17 @@
 @end
 
 @interface RootViewController : UITableViewController {
-    NSArray * _navigationItems;
-    
-    NSString * _selectedNavigationItem;
-    
+    NSArray                     * _navigationItems;
+    NSString                    * _selectedNavigationItem;
+
     NSInteger _navigationLevel;
 }
 
 		
-@property (nonatomic, retain) IBOutlet UIViewController<CommonDetailView> *detailViewController;
+@property (nonatomic, retain) IBOutlet UIViewController<CommonDetailView> * detailViewController;
+@property (nonatomic, retain) NSArray                                     * navigationItems;
+@property (nonatomic, retain) NSString                                    * selectedNavigationItem;
 
-@property (nonatomic, retain) NSArray *navigationItems;
-@property (nonatomic, retain) NSString *selectedNavigationItem;
 @property (nonatomic, assign) NSInteger navigationLevel;
 
 
