@@ -61,10 +61,6 @@ Todo
 Bugs
 ====
 
-- I've used the XCode 4 template for a Split View based application.  The
-  NIB files are still hooked to the now non-existing IBOutlets, causing
-  crashes.
-
 - The 2nd Detail View Controller doesn't show the popover item when the
   iPad is rotated
 
