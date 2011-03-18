@@ -13,9 +13,12 @@
 @interface OtherDetailViewController : UIViewController <CommonDetailView, UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
 }
 
-@property (nonatomic,retain) IBOutlet UIToolbar *toolbar;
+@property (nonatomic,retain) IBOutlet UIToolbar * toolbar;
+@property (nonatomic,retain) IBOutlet UIButton  * drilldownButton;
 
 -(void)configure:(NSString *)item;
+
+- (IBAction)drilldownPressed:(id)sender;
 
 @end
 // vim: set sw=4 ts=4 expandtab:

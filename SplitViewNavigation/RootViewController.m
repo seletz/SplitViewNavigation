@@ -11,12 +11,20 @@
 #import "DetailViewController.h"
 #import "OtherDetailViewController.h"
 
+@interface RootViewController ()
+
+-(void)drillDown:(NSInteger)newNavigationLevel;
+-(void)drilldownNotification:(NSNotification *)note;
+
+@end
+
 @implementation RootViewController
 
 @synthesize detailViewController;
 @synthesize navigationItems        = _navigationItems;
 @synthesize selectedNavigationItem = _selectedNavigationItem;
 @synthesize navigationLevel        = _navigationLevel;
+
 
 - (void)viewDidLoad
 {
@@ -33,7 +41,6 @@
     }
     self.navigationItems = a;
     self.title = [NSString stringWithFormat:@"Level %d", self.navigationLevel];
-
 }
 
 
@@ -42,7 +49,7 @@
     NSLog(@"%s", __func__);
     [super viewWillAppear:animated];
 
-    // We need to update teh detail view controller of our parent split view controller
+    // We need to update the detail view controller of our parent split view controller
     // here iff it's not set correct.
     if (self.detailViewController != [self.splitViewController.viewControllers objectAtIndex:1]) {
         NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, self.detailViewController, nil];
@@ -55,12 +62,19 @@
 {
     NSLog(@"%s", __func__);
     [super viewDidAppear:animated];
+
+    [[NSNotificationCenter defaultCenter]
+        addObserver:self
+           selector:@selector(drilldownNotification:)
+               name:@"drilldown"
+             object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     NSLog(@"%s", __func__);
     [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -86,7 +100,6 @@
 
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -105,58 +118,71 @@
     return cell;
 }
 
+-(void)drilldownNotification:(NSNotification *)note
+{
+    NSLog(@"%s", __func__);
+    // here, we'd probly use the *userInfo* dictionary to find out exactly
+    // where to drill down to.
+    [self drillDown:self.navigationLevel + 1];
+}
+
+-(void)drillDown:(NSInteger)newNavigationLevel
+{
+    NSLog(@"dvc     : %@", self.detailViewController);
+    NSLog(@"sv vc   : %@", self.splitViewController.viewControllers);
+    // We create a new root view controller and a matching detail view controller,
+    // then we push the root view controlle onto the navigation controller.
+    //
+    // Unfortunately, we need also to update the split view contoller's viewController
+    // array to get the new detail view shown.
+    RootViewController *newRootVC = [[RootViewController alloc] init];
+
+    UIViewController<UISplitViewControllerDelegate, CommonDetailView> *newDetailVC = nil;
+    if (newNavigationLevel % 2 == 1) {
+        newDetailVC = [[DetailViewController alloc] init];
+    } else {
+        newDetailVC = [[OtherDetailViewController alloc] init];
+    }
+
+    // new root controller.  
+    newRootVC.detailViewController = newDetailVC;
+    newRootVC.navigationLevel = newNavigationLevel;
+
+    // configure split view controller.  We have a new detail view to be shown, thus we need
+    // to reconfigure the split view controller's *viewControllers* array.  We want the 2nd
+    // entry of this array to point to our new detail view controller.
+    NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, newDetailVC, nil];
+    self.splitViewController.viewControllers = viewControllers;
+    self.splitViewController.delegate = newDetailVC;
+
+    // push the new root view controller to the navigation controller's view stack.
+    [self.navigationController pushViewController:newRootVC animated:YES];
+
+    [newRootVC release];
+    [newDetailVC release];
+    [viewControllers release];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedNavigationItem = [self.navigationItems objectAtIndex:indexPath.row];
-
     NSLog(@"selected: %@", self.selectedNavigationItem);
-    NSLog(@"dvc     : %@", self.detailViewController);
-    NSLog(@"sv vc   : %@", self.splitViewController.viewControllers);
 
 
     if (indexPath.row < 5) {
         // the user selected one of the top five cells.  He wants to drill down
         // one level.
-        //
-        // We create a new root view controller and a matching detail view controller,
-        // then we push the root view controlle onto the navigation controller.
-        //
-        // Unfortunately, we need also to update the split view contoller's viewController
-        // array to get the new detail view shown.
-        NSInteger newNavigationLevel = self.navigationLevel + 1;
-
-        RootViewController *newRootVC = [[RootViewController alloc] init];
-
-        UIViewController<UISplitViewControllerDelegate, CommonDetailView> *newDetailVC = nil;
-        if (newNavigationLevel % 2 == 1) {
-            newDetailVC = [[DetailViewController alloc] init];
-        } else {
-            newDetailVC = [[OtherDetailViewController alloc] init];
-        }
-
-        // new root controller.  
-        newRootVC.detailViewController = newDetailVC;
-        newRootVC.navigationLevel = newNavigationLevel;
-
-        // configure split view controller.  We have a new detail view to be shown, thus we need
-        // to reconfigure the split view controller's *viewControllers* array.  We want the 2nd
-        // entry of this array to point to our new detail view controller.
-        NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, newDetailVC, nil];
-        self.splitViewController.viewControllers = viewControllers;
-        self.splitViewController.delegate = newDetailVC;
-
-        // push the new root view controller to the navigation controller's view stack.
-        [self.navigationController pushViewController:newRootVC animated:YES];
-
-        [newRootVC release];
-        [newDetailVC release];
-        [viewControllers release];
+        [self drillDown:self.navigationLevel + 1];
     } else {
         // user selected an item w/o drill-down option.  Just update the detail view.
         self.detailViewController.title = self.selectedNavigationItem;
         [self.detailViewController configure:self.selectedNavigationItem];
     }
+}
+
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"<RootViewController Level %d>", self.navigationLevel];
 }
 
 - (void)didReceiveMemoryWarning

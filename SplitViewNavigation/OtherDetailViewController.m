@@ -17,6 +17,7 @@
 
 @synthesize toolbar           = _toolbar;
 @synthesize popoverController;
+@synthesize drilldownButton;
 
 -(void)configure:(NSString *)item
 {
@@ -33,6 +34,18 @@
     return self;
 }
 
+#pragma mark - actions
+
+- (void)drilldownPressed:(id)sender
+{
+    NSLog(@"%s", __func__);
+    // the user pressed the drilldown button.
+    //
+    // We want to cause a drilldown to the next level here. We thus
+    // fire a notification to indicate that.  The RootViewController
+    // will act.
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"drilldown" object:self];
+}
 
 #pragma mark - Split view support
 

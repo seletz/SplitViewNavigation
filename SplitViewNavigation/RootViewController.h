@@ -32,4 +32,6 @@
 @property (nonatomic, assign) NSInteger navigationLevel;
 
 
+-(NSString *)description;
+
 @end

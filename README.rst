@@ -53,12 +53,12 @@ What does it do?
 Todo
 ====
 
-- Try to implement drill-downs in the Detail View Controller.
+- refactor root view controller?
 
 Bugs
 ====
 
-- none known as of now.
+- detail view is empty on drill downs.
 
 Change log
 ==========
@@ -68,6 +68,7 @@ Change log
 
 - started writeup, change log
 - fixed popover handling
+- added detail-view drill down using notifications.
 
 
 ::
