@@ -27,7 +27,8 @@ the Detail View Controller to be replaced by a new one.
   It might be possible to generalize the Root View Controller, but I'd like
   to come up with a solution to the problem first ;)
 
-To test my ideas out, I've set up this demo project.
+To test my ideas out, I've set up this demo project.  This is also based on
+the code here: http://blog.gregfiumara.com/?p=61
 
 What didn't work so far
 =======================
@@ -49,6 +50,23 @@ What does it do?
   - we get ten items
   - the first five items *drill down* to the next navigation level
 
+Todo
+====
+
+- clean nib files
+- come up with a nice protocol for view controllers which actually makes
+  sense.
+- Try to implement drill-downs in the Detail View Controller.
+
+Bugs
+====
+
+- I've used the XCode 4 template for a Split View based application.  The
+  NIB files are still hooked to the now non-existing IBOutlets, causing
+  crashes.
+
+- The 2nd Detail View Controller doesn't show the popover item when the
+  iPad is rotated
 
 Change log
 ==========
