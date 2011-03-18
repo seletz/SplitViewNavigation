@@ -17,10 +17,10 @@
 
 @implementation DetailViewController
 
-@synthesize toolbar=_toolbar;
-@synthesize detailItem=_detailItem;
-@synthesize detailDescriptionLabel=_detailDescriptionLabel;
-@synthesize popoverController=_myPopoverController;
+@synthesize toolbar                = _toolbar;
+@synthesize detailItem             = _detailItem;
+@synthesize detailDescriptionLabel = _detailDescriptionLabel;
+@synthesize popoverController;
 
 #pragma mark - Managing the detail item
 
@@ -62,11 +62,15 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self configureView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    if (self.popoverController != nil) {
+        [self.popoverController dismissPopoverAnimated:YES];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -100,10 +104,12 @@
   invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     NSLog(@"%s", __func__);
-    NSMutableArray *items = [[self.toolbar items] mutableCopy];
-    [items removeObjectAtIndex:0];
-    [self.toolbar setItems:items animated:YES];
-    [items release];
+    if (self.toolbar.items.count >0) {
+        NSMutableArray *items = [[self.toolbar items] mutableCopy];
+        [items removeObjectAtIndex:0];
+        [self.toolbar setItems:items animated:YES];
+        [items release];
+    }
     self.popoverController = nil;
 }
 

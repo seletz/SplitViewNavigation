@@ -33,6 +33,7 @@
     }
     self.navigationItems = a;
     self.title = [NSString stringWithFormat:@"Level %d", self.navigationLevel];
+
 }
 
 
@@ -129,28 +130,28 @@
 
         UIViewController<UISplitViewControllerDelegate, CommonDetailView> *newDetailVC = nil;
         if (newNavigationLevel % 2 == 1) {
-            NSLog(@"creating DetailVC for level %d", newNavigationLevel);
             newDetailVC = [[DetailViewController alloc] init];
         } else {
-            NSLog(@"creating OtherDetailVC for level %d", newNavigationLevel);
             newDetailVC = [[OtherDetailViewController alloc] init];
         }
 
-        // new root controller
-        NSLog(@"%s: newRootVC.retainCount=%d", __func__, newRootVC.retainCount);
+        // new root controller.  
         newRootVC.detailViewController = newDetailVC;
         newRootVC.navigationLevel = newNavigationLevel;
 
+        // configure split view controller.  We have a new detail view to be shown, thus we need
+        // to reconfigure the split view controller's *viewControllers* array.  We want the 2nd
+        // entry of this array to point to our new detail view controller.
         NSArray *viewControllers = [[NSArray alloc] initWithObjects:self.navigationController, newDetailVC, nil];
         self.splitViewController.viewControllers = viewControllers;
-        [viewControllers release];
+        self.splitViewController.delegate = newDetailVC;
 
+        // push the new root view controller to the navigation controller's view stack.
         [self.navigationController pushViewController:newRootVC animated:YES];
 
-        NSLog(@"%s: newRootVC.retainCount=%d", __func__, newRootVC.retainCount);
-        NSLog(@"%s: newDetailVC.retainCount=%d", __func__, newDetailVC.retainCount);
         [newRootVC release];
         [newDetailVC release];
+        [viewControllers release];
     } else {
         // user selected an item w/o drill-down option.  Just update the detail view.
         self.detailViewController.title = self.selectedNavigationItem;

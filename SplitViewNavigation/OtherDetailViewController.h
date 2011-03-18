@@ -10,8 +10,7 @@
 
 #import "RootViewController.h"
 
-@interface OtherDetailViewController : UIViewController <CommonDetailView, UISplitViewControllerDelegate> {
-    //UINavigationBar *navigationBar;
+@interface OtherDetailViewController : UIViewController <CommonDetailView, UIPopoverControllerDelegate, UISplitViewControllerDelegate> {
 }
 
 @property (nonatomic,retain) IBOutlet UIToolbar *toolbar;
